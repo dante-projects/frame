@@ -1,0 +1,14 @@
+@import "../componentes/_estilos/clases.css";
+@import "../componentes/_estilos/config.css";
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(59, 59, 59);
+
+    .marcoTest {
+        width: 500px;
+        height: 600px;
+        border: 1px solid grey;
+    }
+}
