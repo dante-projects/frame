@@ -1,6 +1,6 @@
 const MIMEcorregido = "https://cdn.jsdelivr.net/gh/dante-projects/frame@main/componentes/_funciones"
 let modulos = []
-let modulosDescargar = ["domElementos", "test"]
+let modulosDescargar = ["domElementos", "test2"]
 const cargarModulos = async () => {
     for (const item of modulosDescargar) {
         const funcion = await import(`${MIMEcorregido}/${item}.js`)
