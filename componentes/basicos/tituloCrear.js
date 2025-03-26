@@ -1,17 +1,26 @@
-import { importarFunciones } from "../_funciones/_importarFunciones.js"
-import { crearElemento } from "../_funciones/domElementos.js"
-import { importarCss } from "../_funciones/importarCss.js"
+const MIMEcorregido = "https://cdn.jsdelivr.net/gh/dante-projects/frame@main/componentes/_funciones"
+let modulos = []
+let modulosDescargar = ["domElementos", "test"]
+const cargarModulos = async () => {
+    for (const item of modulosDescargar) {
+        const funcion = await import(`${MIMEcorregido}/${item}.js`)
+        console.log(funcion)
+        modulos.push(funcion)
+    }
+}
+await cargarModulos()
+console.log(modulos)
+modulos.crearElemento()
 
-// import * as eventos from "../_funciones/eventosPersonalizados.js"
-// import { crearElemento } from "../_funciones/domElementos.js"
+
+const dom = import(`${MIMEcorregido}/domElementos.js`)
+import { importarCss } from "../_funciones/importarCss.js"
 
 class tituloCrear extends HTMLElement {
     constructor() {
         super()
         this.attachShadow({mode: "open"})
         importarCss(this.shadowRoot)
-
-        console.log(importarFunciones(this.shadowRoot, "domElementos.js"))
 
         this.shadowRoot.innerHTML += `
             <div class="contenedor borderRadiusGrey">
