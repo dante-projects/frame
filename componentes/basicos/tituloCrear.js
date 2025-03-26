@@ -1,5 +1,7 @@
-import { importarCss } from "../_funciones/importarCss.js"
 import { importarFunciones } from "../_funciones/_importarFunciones.js"
+import { crearElemento } from "../_funciones/domElementos.js"
+import { importarCss } from "../_funciones/importarCss.js"
+
 // import * as eventos from "../_funciones/eventosPersonalizados.js"
 // import { crearElemento } from "../_funciones/domElementos.js"
 
@@ -8,8 +10,8 @@ class tituloCrear extends HTMLElement {
         super()
         this.attachShadow({mode: "open"})
         importarCss(this.shadowRoot)
-        importarFunciones(this.shadowRoot, "componentes/_funciones/domElementos.js")
-        crearElemento(this.shadowRoot, "div")
+
+        console.log(importarFunciones(this.shadowRoot, "domElementos.js"))
 
         this.shadowRoot.innerHTML += `
             <div class="contenedor borderRadiusGrey">
